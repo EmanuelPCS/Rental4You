@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+html {
+    position: relative;
+    min-height: 100%;
+    overflow: auto;
+}
+body {
+    margin-bottom: 60px;
+    min-width: 100%;
+    overflow: hidden;
+}
+#banner-container {
+    background-color: cadetblue;
+    color: white !important;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+#banner-containerTeste {
+    background-color: silver;
+    color: white !important;
+    padding-top: 140px;
+    padding-bottom: 10px;
+    
+}
+#banner-container2 {
+    background-color: cadetblue;
+    color: white !important;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#banner-row img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    padding-left: 30px;
+}
+
+#banner-row h3, p {
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#ola {
+    padding-left: 5px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+#banner-row a {
+    background-color: white !important;
+    color: black !important;
+    border: none;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#banner-col {
+    padding: 0 5% 0 10%;
+}
+
+#banner-col2 {
+    padding: 0 5% 0 20%;
+}
+
+#banner-col3 {
+    background-color: cadetblue;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 25px;
+}
+
+@media screen and (max-width: 1360px) {
+    .mudaTab {
+        display: none; /*Is working*/
+    }
+}
+
+/* footer */
+
+.mb-3 {
+    padding-top: 10px;
+}
+
+
+/* media */
+@media only screen and (max-width: 987px) {
+    .navbar-brand {
+        padding-left: 0px;
+    }
+   
+}
+
+#kko {
+    padding: 5% 5% 0.5% 15%;
+}
+
+@media(min-width:600px) {
+    #kko {
+        padding: 5% 5% 0.5% 15%;
+    }
+    #banner-col {
+        padding: 0 5% 0 10%;
+    }
+    #banner-col {
+        padding: 0 5% 0 20%;
+    }
+}
+
+@media(min-width:700px) {
+    #kko {
+        padding: 5% 5% 0.5% 15%;
+    }
+    #banner-col {
+        padding: 0 5% 0 10%;
+    }
+    #banner-col2 {
+        padding: 0 5% 0 20%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    #banner-row img {
+        padding-top: 20px;
+    }
+
+    .social-col {
+        width: 33%;
+    }
+}
+
+
+.reveal {
+    position: relative;
+    opacity: 0;
+}
+
+
+.reveal.active {
+    opacity: 1;
+}
+
+.active.fade-bottom {
+    animation: fade-bottom 1s ease-in;
+}
+
+.active.fade-left {
+    animation: fade-left 1s ease-in;
+}
+
+.active.fade-right {
+    animation: fade-right 1s ease-in;
+}
+
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.waviy {
+    position: relative;
+}
+
+    .waviy span {
+        position: relative;
+        display: inline-block;
+        font-size: 40px;
+        color: steelblue;
+        text-transform: uppercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--i))
+    }
+
+@keyframes flip {
+    0%,80% {
+        transform: rotateY(360deg)
+    }
+}
+
+
+
+.border-animation-style {
+    display: inline-block;
+    width: 225px;
+    height: 225px;
+    line-height: 200px;
+    border: 5px dashed #804000;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mudaTab {
+    background-color: lightblue;
+    border-radius: 44px;
+    height: calc(100% - 10px);
+    width: 57px;
+    position: absolute;
+    top: 4px;
+    left: 220px;
+    transition: left 0.51s ease;
+}
+
+.eff1 {
+    left: 220px;
+}
+
+.eff2 {
+    left: 275px;
+    width: 75px;
+}
+
+.eff3 {
+    left: 350px;
+    width: 100px;
+}
+
+
+li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px 16px;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+}
+
+li {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+

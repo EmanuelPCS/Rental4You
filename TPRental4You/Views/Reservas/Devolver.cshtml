@@ -1,0 +1,46 @@
+﻿@model TPRental4You.Models.Reserva
+
+@{
+    ViewData["Title"] = "Devolver";
+}
+
+<h1>Devolver</h1>
+
+<h4>Classifique a sua reserva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <select style="display:none" asp-for="EstadoReserva" class="form-control" asp-items="Html.GetEnumSelectList<estadoReserva>()"></select>
+            <input type="hidden" asp-for="Preco" class="form-control" />
+            <select style="display:none" asp-for="VeiculoId" asp-items="ViewBag.VeiculoId"></select>
+            <select style="display:none" asp-for="ClienteId" asp-items="ViewBag.ClienteId"></select>
+            <select style="display:none" asp-for="EmpresaId" asp-items="ViewBag.EmpresaId"></select>
+            <input type="hidden" asp-for="DataDeEntrega" />
+            <input type="hidden" asp-for="DataDeLevantamento" />
+            <input type="hidden" asp-for="DataDeReserva" />
+            <select style="display:none" asp-for="Situacao" class="form-control">
+                <option selected value="2"></option>
+            </select>
+
+            <div class="form-group">
+                <label asp-for="Classificacao" class="control-label"></label>
+                <input type="number" min="0.0" max="5.0" asp-for="Classificacao" class="form-control" />
+                <span asp-validation-for="Classificacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Devolver Veiculo" class="btn btn-success" />
+                <a class="btn btn-warning" asp-controller="Reservas" asp-action="Index">Voltar atrás</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

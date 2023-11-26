@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rental4You</title>
+    <link rel="icon" href="/imagens/meuautomovelmaresia1.png"
+          type="image/x-icon">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/TPRental4You.styles.css" asp-append-version="true" />*@
+   @* <link rel="stylesheet" href="~/css/carousel.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="~/css/MyStyleSheet.css" asp-append-version="true" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="style.css" />
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+          rel="stylesheet" />
+</head>
+<body >
+    <div >
+        <header >
+            <div class="container" >
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3 fixed-top" style="background-color:cadetblue">
+                    <div class="container">
+                        <a class="navbar-brand text-light" asp-controller="Home" asp-action="Index"><strong>Rental4You</strong></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        @*<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">*@
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            @*<ul class="navbar-nav flex-grow-1">*@
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                @if (!User.IsInRole("Administrador"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Reservas" asp-action="Index">Reservas</a>
+                                    </li>
+                                }
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                    </li>-->
+                                @if (User.IsInRole("Funcionario") || User.IsInRole("Gestor"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Veiculos" asp-action="Index">Veiculos</a>
+                                    </li>
+                                }
+
+                                @if (User.IsInRole("Administrador"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Empresas" asp-action="Index">Empresas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="TiposDeVeiculos" asp-action="Index">Categorias</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Localizacoes" asp-action="Index">Localizacoes</a>
+                                    </li>
+                                }
+
+                                @if (User.IsInRole("Gestor") || User.IsInRole("Administrador"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Utilizadores" asp-action="Index">Utilizadores</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Lucros" asp-action="Index">Painel de controlo</a>
+                                    </li>
+                                }
+                            </ul>
+                            <partial name="_LoginPartial" />
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        
+       <!-- <main class="container-fluid" id="banner-containerTeste" style="background-image: url('imagens/bgimage.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+         </main>-->
+        <main class="container mt-5 pt-5 text-start">
+            @RenderBody()
+         </main>
+    
+        
+    </div>
+
+
+
+    <!-- footer -->
+    <section id="footer" >
+        <section id="banner">
+            <div class="container-fluid" id="banner-container" style="padding-bottom: 10px; padding-top: 30px;">
+                <div class="row" id="banner-row">
+                    <div class="col-md-12" id="footer-col1">
+
+                        <h3>Rental4You</h3>
+
+                        <p>
+                            &copy; 2022 - Rental4You - Todos os direitos reservados.
+                        </p>
+
+                        <p id="ola"><a asp-area="" asp-controller="Home" asp-action="Privacy" class="btn btn-primary">Política de Privacidade</a></p>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </section>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

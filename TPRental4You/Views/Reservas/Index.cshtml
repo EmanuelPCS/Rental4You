@@ -1,0 +1,182 @@
+﻿@model IEnumerable<TPRental4You.Models.Reserva>
+@using TPRental4You.Models.ViewModels
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+@if (User.IsInRole("Funcionario") || User.IsInRole("Gestor"))
+{
+    <h4>Filtrar por</h4>
+}
+
+@if (User.IsInRole("Funcionario") || User.IsInRole("Gestor") || User.IsInRole("Administrador"))
+{
+    <form method="post">
+
+        <select name="EstadoReserva">
+            <option id="a" value="0" selected="selected">Estado</option>
+            <option id="a" value="1">Por_Confirmar</option>
+            <option id="a" value="2">Confirmada</option>
+            <option id="a" value="3">Rejeitada</option>
+            <option id="a" value="4">Finalizada</option>
+        </select>
+
+        <select name="TiposDeVeiculoId" asp-items="ViewBag.TiposDeVeiculoId">
+            <option id="defaultTipo" selected="selected">Categoria</option>
+        </select>
+
+        <select name="VeiculoId" asp-items="ViewBag.VeiculoId">
+            <option id="defaultTipo" selected="selected">Veiculo</option>
+        </select>
+
+        <select name="ClienteId" asp-items="ViewBag.ClienteId">
+            <option id="defaultTipo" selected="selected">Cliente</option>
+        </select>
+
+        <input type="text" name="DataDeLevantamento" placeholder="Data de Levantamento" onfocus="(this.type = 'date')" />
+        <input type="text" name="DataDeEntrega" placeholder="Data de Entrega" onfocus="(this.type = 'date')"  />
+
+        <button id="botaoPesquisa" type="submit" value="0" class="btn btn-default">
+            🔍
+        </button>
+
+    </form>
+}
+
+<!--<p>
+    <a asp-action="Create">Create New</a>
+</p>
+-->
+
+<div table-responsive>
+    <h4>Histórico de Reservas</h4>
+    <table class="table table-bordered table-striped table-hover" style="display: block; overflow-x: auto; white-space: nowrap;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoReserva)
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.EstadoReserva)*@
+                    Pagamento
+                </th>
+                <th>
+                    Situação do Carro
+                    @*@Html.DisplayNameFor(model => model.estados)*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataDeLevantamento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataDeEntrega)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.veiculo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Preco)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoReserva)
+                    </td>
+                    <td>
+                        @if (Enum.GetName(typeof(situacaoReserva), item.Situacao).Equals("Cliente_Entregou"))
+                        {
+                            string pagamento = "Vencido";
+                            @Html.DisplayFor(modelItem => pagamento)
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.Situacao)
+                        }
+                    </td>
+                    <td>
+                        @if (Enum.GetName(typeof(situacaoReserva), item.Situacao).Equals("Cliente_Entregou"))
+                        {
+                            string situacao = "Devolvido";
+                            @Html.DisplayFor(modelItem => situacao)
+                        }
+                        else if (item.estados.Count == 1)
+                        {
+                            string situacao = "Levantado";
+                            @Html.DisplayFor(modelItem => situacao)
+                        }
+                        else
+                        {
+                            string situacao = "Pendente";
+                            @Html.DisplayFor(modelItem => situacao)
+                        }
+                        @*@foreach(var estado in item.estados) {
+                    if()
+                    @Html.DisplayFor(modelItem => estado.Tipo)
+                    }*@
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataDeLevantamento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataDeEntrega)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.veiculo.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td>
+                        @if ((User.IsInRole("Funcionario") || User.IsInRole("Gestor")) && ((int?)item.EstadoReserva) == 0)
+                        {
+                            <a class="btn btn-outline-success" asp-action="Edit" asp-route-id="@item.Id" asp-route-confirmar="2">Confirmar</a>
+                            <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id" asp-route-confirmar="1">Rejeitar</a>
+                        }
+
+                        <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.Id">Detalhes</a>
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Cliente") && ((int?)item.EstadoReserva) == 1 && ((int?)item.Situacao) == 0)
+                        {
+                            <a class="btn btn-outline-danger" asp-action="Pagar" asp-route-id="@item.Id">Pagar</a>
+                        }
+                        else if (User.IsInRole("Cliente") && ((int?)item.EstadoReserva) == 1 && ((int?)item.Situacao) == 1 && item.estados.Count == 1)
+                        {
+                            <a class="btn btn-outline-warning" asp-action="Devolver" asp-route-id="@item.Id">Devolver Veiculo</a>
+                        }
+                        else if (User.IsInRole("Cliente") && ((int?)item.EstadoReserva) == 4 && ((int?)item.Situacao) == 1)
+                        {
+                            <a class="btn btn-outline-warning" asp-action="Devolucao" asp-route-id="@item.Id">Receber Devolução</a>
+                        }
+                        else if (User.IsInRole("Funcionario") || User.IsInRole("Gestor"))
+                        {
+                            //var mostra = true;
+
+                            @if (Enum.GetName(typeof(situacaoReserva), item.Situacao).Equals("Cliente_Entregou") && item.estados.Count != 2)
+                            {
+                                <a class="btn btn-outline-warning" asp-action="Create" asp-controller="Estados" asp-route-id="@item.Id" asp-route-tipoEstado="1">Receber Veiculo</a>
+                            }
+                            else if (item.estados.Count == 0 && item.Situacao != 0 && !item.EstadoReserva.Equals(estadoReserva.Cancelada))
+                            {
+                                <a class="btn btn-outline-warning" asp-action="Create" asp-controller="Estados" asp-route-id="@item.Id" asp-route-tipoEstado="0">Entregar Veiculo</a>
+                            }
+
+                            @*else if(item.estados.Count == 1) {
+                    <a class="btn btn-outline-warning" asp-action="Create" asp-controller="Estados" asp-route-id="@item.Id">Entregar Veiculo</a>
+                    }*@
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

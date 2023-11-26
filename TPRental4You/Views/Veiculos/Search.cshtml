@@ -1,0 +1,122 @@
+﻿@using TPRental4You.Models.ViewModels
+@model PesquisaVeiculoViewModel
+
+@{
+    // Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Filtrar por</h2>
+
+<form method="post" action="Search">
+
+    <!--<input type="text" id="VeiculoAPesquisar" name="VeiculoAPesquisar"
+           placeholder="texto a procurar" />-->
+
+
+    <select name="TiposDeVeiculoId" asp-items="ViewBag.TiposDeVeiculoId">
+        <option id="defaultTipo" selected="selected">Veiculo</option>
+    </select>
+    <select name="EmpresaId" asp-items="ViewBag.EmpresaId">
+        <option id="defaultEmpresas" selected="selected">Empresa</option>
+    </select>
+
+
+    <input name="LocalizacaoId" type="hidden" value="@Model.LocalizacaoId" asp-items="ViewBag.LocalizacaoId"></input>
+
+    <input asp-for="@Model.DataPesquisaInicial" type="hidden" class="form-control" />
+    <input asp-for="@Model.DataPesquisaFinal" type="hidden" class="form-control" />
+
+    <button id="botaoPesquisa" type="submit" value="0" class="btn btn-default">
+        🔍
+    </button>
+
+
+    <input id="ordenarCrescente" name="ordenarPreco" value="1" type="checkbox" onchange="cbChange(this)" class="ab">Preco mais baixo</input>
+    <input id="ordenarDecrescente" name="ordenarPreco" value="2" type="checkbox" onchange="cbChange2(this)" class="ba">Preco mais alto</input>
+
+    <input id="ordenarCrescenteEmpresa" name="ordenarClassificacao" value="3" type="checkbox" onchange="cbChange3(this)" class="bc">Classificacao mais baixo</input>
+    <input id="ordenarDecrescenteEmpresa" name="ordenarClassificacao" value="4" type="checkbox" onchange="cbChange4(this)" class="cb">Classificacao mais alta</input>
+
+</form>
+
+<script>
+    function cbChange(obj) {
+        var cbs = document.getElementsByClassName("ba");
+        cbs[0].checked = false;
+    }
+
+    function cbChange2(obj) {
+        var cbs = document.getElementsByClassName("ab");
+        cbs[0].checked = false;
+    }
+    function cbChange3(obj) {
+        var cbs = document.getElementsByClassName("cb");
+        cbs[0].checked = false;
+    }
+    function cbChange4(obj) {
+        var cbs = document.getElementsByClassName("bc");
+        cbs[0].checked = false;
+    }
+</script>
+
+<h1>
+    @ViewData["Title"]
+</h1>
+
+<div class="container bg-white">
+    @if (Model.NumResultados == 0)
+    {
+        <p class="alert alert-warning">
+            Não foi possível encontrar veiculos com os dados introduzidos. Por favor, reveja a sua
+            pesquisa
+        </p>
+    }
+    else
+    {
+        <p>Existe(m) @Model.NumResultados veiculo(s) disponiveis</p>
+    }
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        @foreach (var item in Model.ListaDeVeiculos)
+        {
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">
+                            @Html.DisplayFor(modelItem => item.Marca)
+                            @Html.DisplayFor(modelItem => item.Nome)
+                            (@Html.DisplayFor(modelItem => item.tiposDeVeiculo.Nome))
+                        </h4>
+                    </div>
+
+                    <div class="card-body">
+
+                        <img id="MyFoto" class="img-thumbnail" style="height:100px;width:auto"
+                         src="data:image/*;base64,@(Convert.ToBase64String(item.Foto))" />
+
+                        <h2 class="card-title pricing-card-title">
+                            @Html.DisplayFor(modelItem => item.empresa.Nome)
+                            (@Html.DisplayFor(modelItem => item.empresa.Avaliacao)☆)
+                            <small class="text-muted fw-light"></small>
+                        </h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li class="my-0 fw-normal">
+                                @Html.DisplayFor(modelItem => item.Preco) €
+                            </li>
+                        </ul>
+                        <a class="btn btn-lg btn-outline-primary"
+                       asp-controller="Veiculos" asp-action="Details" asp-route-id="@item.Id">
+                            Saber
+                            mais
+                        </a>
+                        <a class="btn btn-lg btn-success"
+                       asp-controller="Reservas" asp-action="Create" asp-route-id="@item.Id" asp-route-dataPesquisaInicial="@Model.DataPesquisaInicial" asp-route-dataPesquisaFinal="@Model.DataPesquisaFinal">
+                            Reservar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

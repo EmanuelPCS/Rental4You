@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TPRental4You.Models.Estado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Estados</h1>
+
+<p>
+    <a asp-action="Create">Criar Estado</a>
+</p>
+
+<div table-responsive>
+<table class="table table-bordered table-striped table-hover" style="display: block; overflow-x: auto; white-space: nowrap;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Km)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DanosDoVeiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reserva)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Km)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DanosDoVeiculo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacoes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.reserva.Id)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class ="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    <a class="btn btn-outline-danger"  asp-action="Delete" asp-route-id="@item.Id">Remover</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

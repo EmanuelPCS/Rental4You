@@ -1,0 +1,24 @@
+﻿@model TPRental4You.Models.TiposDeVeiculo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TiposDeVeiculo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+</div>

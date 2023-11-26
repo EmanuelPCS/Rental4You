@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TPRental4You.Models.Empresa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Filtrar por</h2>
+
+<form method="post">
+
+    <select name="EmpresaId" asp-items="ViewBag.EmpresaId">
+        <option id="defaultTipo" selected="selected">Empresa</option>
+    </select>
+
+    <select name="Ativa">
+        <option id="defaultTipo" name="Ativa" value="0" selected="selected">Estado</option>
+        <option id="tipo" name="Ativa" value="1">Ativas</option>
+        <option id="tipo" name="Ativa" value="2">Inativas</option>
+    </select>
+
+    <button id="botaoPesquisa" type="submit" value="0" class="btn btn-default">
+        🔍
+    </button>
+
+    <button id="ordenarCrescenteEmpresa" type="submit" name="ordenarEmpresa" value="1">Empresa ascendente</button>
+    <button id="ordenarDecrescenteEmpresa" type="submit" name="ordenarEmpresa" value="2">Empresa descendente</button>
+
+    <button id="ordenarCrescenteEstado" type="submit" name="ordenarEstado" value="3">Estado ascendente</button>
+    <button id="ordenarDecrescenteEstado" type="submit" name="ordenarEstado" value="4">Estado descendente</button>
+
+</form>
+
+
+
+<h1>Empresas</h1>
+
+<p>
+    <a class="btn btn-primary" style="background-color:cadetblue; border-color:cadetblue; border-radius:15px"  asp-action="Create">Criar Empresa</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativa)
+                </td>
+                <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.Id">Remover</a>
+
+                    @if (item.Ativa)
+                    {
+                        <a asp-action="Desativar" style="margin-left:30px" class="btn btn-outline-secondary" asp-route-id="@item.Id">Desativar</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Ativar" style="margin-left:30px" class="btn btn-outline-success" asp-route-id="@item.Id">Ativar</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

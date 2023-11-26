@@ -1,0 +1,111 @@
+﻿@model TPRental4You.Models.Estado
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Criar</h1>
+
+<h4>Estado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Tipo" type="hidden" value="@Model.Tipo" class="form-control" />
+
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control" disabled asp-items="Html.GetEnumSelectList<Tipo>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Km" class="control-label"></label>
+
+                @if (Enum.GetName(typeof(Tipo), Model.Tipo).Equals("Entrega"))
+                {
+                    <input asp-for="Km" class="form-control" min="@Model.Km" />
+                }
+                else
+                {
+                    <input asp-for="Km" type="hidden" value="@Model.Km" class="form-control" />
+                    <input asp-for="Km" value="@Model.Km" readonly disabled class="form-control" />
+                }
+                <span asp-validation-for="Km" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="DanosDoVeiculo" onchange="cbChange(this)" /> @Html.DisplayNameFor(model => model.DanosDoVeiculo)
+                </label>
+            </div>
+
+            <div class="col-md-8" id="myDIV" style="display:none">
+                <p>Adicionar imagens</p>
+                <div class="form-group">
+                    <input type="file" name="ficheiros" id="ficheiros"
+                           multiple
+                           accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                           class="form-control" required />
+                    @*<span name="ficheiros" class="text-danger"></span>*@
+                </div>
+                <p>Galeria de imagens</p>
+                <div class="row d-flex">
+                    @foreach (var file in ViewBag.Ficheiros)
+                    {
+                        int tipo = 0;
+                        if (Enum.GetName(typeof(Tipo), @Model.Tipo).Equals("Entrega"))
+                            tipo = 1;
+                        <div class="col p-2 m-2" style="border-radius:10px;">
+                            <a asp-action="deleteImage"
+                           asp-route-id="@ViewBag.ReservaId"
+                           asp-route-image="@file"
+                           asp-route-tipoEstado="@tipo">
+                                <svg bootstrap-icon="XCircleFill" onclick="return confirm('Tem a certeza?')"
+                                 class="text-danger" width="24" aria-label="Thrash"></svg>
+                            </a>
+                            <img src="@file"
+                             class="img-thumbnail"
+                             style="max-width:150px; max-height:150px" />
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Observacoes" class="control-label"></label>
+                <input asp-for="Observacoes" class="form-control" />
+                <span asp-validation-for="Observacoes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ReservaId" value="@ViewBag.ReservaId" style="display:none" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input asp-for="FuncionarioId" type="hidden" value="@Model.FuncionarioId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" style="background-color:cadetblue; border-color:cadetblue; border-radius:15px" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function cbChange(obj) {
+        if (document.getElementById('myDIV').style.display == 'none')
+            document.getElementById('myDIV').style.display = 'inline';
+        else {
+            document.getElementById('myDIV').style.display = 'none';
+            document.getElementById('ficheiros').value = null;
+        }
+    }
+</script>
+
+<div>
+    <a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

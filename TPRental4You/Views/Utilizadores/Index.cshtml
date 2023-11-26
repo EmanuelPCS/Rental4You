@@ -1,0 +1,97 @@
+﻿@model IEnumerable<TPRental4You.Models.ViewModels.UserRolesViewModel>
+@{
+    ViewData["Title"] = "Utilizadores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Utilizadores</h1>
+
+@if (User.IsInRole("Gestor"))
+{
+    <div>
+        <a class="btn btn-primary" style="background-color:cadetblue; border-color:cadetblue; border-radius:15px" asp-action="Create">Adicionar utilizador</a>
+    </div>
+}
+
+<div table-responsive>
+<table class="table table-bordered table-striped table-hover" style="display: block; overflow-x: auto; white-space: nowrap;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimeiroNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UltimoNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Avatar == null)
+                    {
+                        <img id="MyAvatar" class="img-thumbnail" style="height:75px;width:auto" src="~/imagens/user.png" />
+                    }
+                    else
+                    {
+                        <img id="MyAvatar" class="img-thumbnail" style="height:75px;width:auto"
+                     src="data:image/*;base64,@(Convert.ToBase64String(item.Avatar))" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrimeiroNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UltimoNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @String.Join(',',  item.Roles)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="Details" asp-route-userId="@item.UserId">Detalhes</a>
+                    @if (item.Desativa)
+                    {
+                        if (User.IsInRole("Administrador"))
+                        {
+                            <a class="btn btn-outline-warning" asp-action="Edit" asp-route-userId="@item.UserId">Editar</a>
+                        }
+                        if (!item.Ativo)
+                        {
+                            <a class="btn btn-outline-success" asp-action="Ativar" asp-route-userId="@item.UserId">Ativar</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-secondary" asp-action="Desativar" asp-route-userId="@item.UserId">Desativar</a>
+                        }
+                        if (User.IsInRole("Gestor") && item.Elimina)
+                        {
+                            <a class="btn btn-outline-danger" asp-action="Eliminar" asp-route-userId="@item.UserId">Eliminar</a>
+                        }
+
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

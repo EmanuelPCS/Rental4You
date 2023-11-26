@@ -1,0 +1,153 @@
+﻿@model IEnumerable<TPRental4You.Models.Veiculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Filtrar por</h2>
+
+<form method="post">
+
+    <select name="TiposDeVeiculoId" asp-items="ViewBag.TiposDeVeiculoId">
+        <option id="defaultTipo" selected="selected">Veiculo</option>
+    </select>
+
+    <select name="Ativo">
+        <option id="defaultTipo" name="Ativo" value="0" selected="selected">Estado</option>
+        <option id="tipo" name="Ativo" value="1">Ativos</option>
+        <option id="tipo" name="Ativo" value="2">Inativos</option>
+    </select>
+
+    <button id="botaoPesquisa" type="submit" value="0" class="btn btn-default">
+        🔍
+    </button>
+
+    <button id="ordenarCrescenteCategoria" type="submit" name="ordenarTipo" value="1">Categoria ascendente</button>
+    <button id="ordenarDecrescenteCategoria" type="submit" name="ordenarTipo" value="2">Categoria descendente</button>
+
+    <button id="ordenarCrescenteEstado" type="submit" name="ordenarEstado" value="3">Estado ascendente</button>
+    <button id="ordenarDecrescenteEstado" type="submit" name="ordenarEstado" value="4">Estado descendente</button>
+
+</form>
+
+<script>
+    function cbChange(obj) {
+        var cbs = document.getElementsByClassName("ba");
+        cbs[0].checked = false;
+    }
+
+    function cbChange2(obj) {
+        var cbs = document.getElementsByClassName("ab");
+        cbs[0].checked = false;
+    }
+    function cbChange3(obj) {
+        var cbs = document.getElementsByClassName("cb");
+        cbs[0].checked = false;
+    }
+    function cbChange4(obj) {
+        var cbs = document.getElementsByClassName("bc");
+        cbs[0].checked = false;
+    }
+</script>
+
+
+<h2>Registo de Veiculos</h2>
+
+<p>
+    <a class="btn btn-primary" style="background-color:cadetblue; border-color:cadetblue; border-radius:15px" asp-action="Create">Adicionar Veiculo</a>
+</p>
+
+<div table-responsive>
+<table class="table table-bordered table-striped table-hover" style="display: block; overflow-x: auto; white-space: nowrap;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                Preço por hora
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.localizacao.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tiposDeVeiculo.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empresa.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+                    <img id="MyFoto" class="img-thumbnail" style="height:75px;width:auto"
+                     src="data:image/*;base64,@(Convert.ToBase64String(item.Foto))" />
+
+                    @* @Html.DisplayFor(modelItem => item.Foto)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matricula)
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.localizacao.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tiposDeVeiculo.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.empresa.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-outline-warning" asp-route-id="@item.Id">Editar</a>
+                    <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.Id">Detalhes</a>
+                    @if (item.Reservas.Count() == 0)
+                    {
+                        <a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.Id">Remover</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

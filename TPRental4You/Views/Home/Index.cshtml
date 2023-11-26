@@ -1,0 +1,59 @@
+﻿@model TPRental4You.Models.ViewModels.PesquisaVeiculoViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+<div style="background-color:transparent">
+    <div class="row" id="banner-row">
+        <div class="col-md-12" id="banner-col">
+            <div class="text-center">
+                <h1 id="tab-inicio" class="display-4">Aluger de carros</h1>
+                <h2>Pesquise. Compare. Alugue</h2>
+            </div>
+
+        </div>
+        <div class="col-md-12" id="banner-col2" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="row" id="banner-row">
+                <div class="col-md-10" id="banner-col3">
+                    <form method="post" action="Veiculos/Search">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="control-label">Localização de levantamento</label>
+                                <select class="form-select" name="LocalizacaoId" asp-items="ViewBag.LocalizacaoId"></select>
+                            </div>
+                            <div class="col">
+                                <label class="control-label">Data e hora de levantamento</label>
+                                <input class="form-control" asp-for="DataPesquisaInicial" />
+                                <span asp-validation-for="DataPesquisaInicial" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label class="control-label">Data e hora de entrega</label>
+                                <input class="form-control" asp-for="DataPesquisaFinal" />
+                                <span asp-validation-for="DataPesquisaFinal" class="text-danger"></span>
+                            </div>
+                            <div class="col" style="margin-top: 22px;">
+                                <button id="botaoPesquisa" type="submit" class="btn btn-default" style="background-color: transparent; border: 2px solid white; border-radius: 12px; color: white;">
+                                    <b>Pesquisar</b>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

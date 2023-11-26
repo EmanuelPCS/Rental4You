@@ -1,0 +1,135 @@
+﻿@model TPRental4You.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Criar</h1>
+
+<h4>Veiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label"></label>
+                <select asp-for="Marca" class="form-control" asp-items="Html.GetEnumSelectList<Marcas>()"></select>
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Matricula" class="control-label"></label>
+                <input asp-for="Matricula" class="form-control"></input>
+                <span asp-validation-for="Matricula" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <div>
+                    <img id="MyFoto" class="img-thumbnail" src="~/imagens/carroDefault.png" style="width: 20%;" />
+                </div>
+                <div>
+                    <div>
+                        <label asp-for="FotoFile">Insira uma foto do carro:</label>
+                        <input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                               asp-for="FotoFile" class="form-control"
+                               onchange="document.getElementById('MyFoto').src = window.URL.createObjectURL(this.files[0])"
+                               required />
+                        <span asp-validation-for="FotoFile" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Km" class="control-label"></label>
+                    <input asp-for="Km" class="form-control" />
+                    <span asp-validation-for="Km" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Preço por Hora
+                    <input asp-for="Preco" class="form-control" />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Lugares" class="control-label"></label>
+                    <input asp-for="Lugares" class="form-control" />
+                    <span asp-validation-for="Lugares" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Malas" class="control-label"></label>
+                    <input asp-for="Malas" class="form-control" />
+                    <span asp-validation-for="Malas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mudancas" class="control-label"></label>
+                    <select asp-for="Mudancas" class="form-control" asp-items="Html.GetEnumSelectList<tipoMudancas>()"></select>
+                    <span asp-validation-for="Mudancas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataInicial" class="control-label"></label>
+                    <input asp-for="DataInicial" type="datetime-local" id="theDateInicial" class="form-control" />
+                    <span asp-validation-for="DataInicial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataFim" class="control-label"></label>
+                    <input asp-for="DataFim" type="datetime-local" id="theDateFinal" class="form-control" />
+                    <span asp-validation-for="DataFim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LocalizacaoId" class="control-label"></label>
+                    <select asp-for="LocalizacaoId" class="form-control" asp-items="ViewBag.LocalizacaoId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TiposDeVeiculoId" class="control-label"></label>
+                    <select asp-for="TiposDeVeiculoId" class="form-control" asp-items="ViewBag.TiposDeVeiculoId"></select>
+                </div>
+                <div class="form-group">
+                    <select asp-for="EmpresaId" style="display:none" class="form-control" asp-items="ViewBag.EmpresaId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Criar" class="btn btn-primary" style="background-color:cadetblue; border-color:cadetblue; border-radius:15px" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-info" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+    <script>
+        var date = new Date();
+
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        var horas = date.getHours();
+        var minutos = date.getMinutes();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        var today = year + "-" + month + "-" + day + "T" + horas + ":" + minutos;
+
+        document.getElementById('theDateInicial').min = today;
+        document.getElementById('theDateInicial').value = today;
+        document.getElementById('theDateFinal').min = today;
+        document.getElementById('theDateFinal').value = today;
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js%22%3E</script>

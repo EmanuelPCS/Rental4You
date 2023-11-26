@@ -1,0 +1,59 @@
+﻿@model TPRental4You.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Confirme os dados da sua reserva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <select style="display:none" asp-for="EstadoReserva" class="form-control" asp-items="Html.GetEnumSelectList<estadoReserva>()"></select>
+            <input type="hidden" value="@Model.DataDeLevantamento" asp-for="DataDeLevantamento" />
+            <input type="hidden" value="@Model.DataDeEntrega" asp-for="DataDeEntrega" />
+            <input type="hidden" value="@Model.DataDeReserva" asp-for="DataDeReserva" />
+            <input type="hidden" value="@Model.Preco" asp-for="Preco" />
+            <select style="display:none" asp-for="Situacao" class="form-control" asp-items="Html.GetEnumSelectList<situacaoReserva>()"></select>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataDeLevantamento" class="control-label"></label>
+                <input asp-for="DataDeLevantamento" readonly disabled class="form-control" />
+                <span asp-validation-for="DataDeLevantamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataDeEntrega" class="control-label"></label>
+                <input asp-for="DataDeEntrega" readonly disabled class="form-control" />
+                <span asp-validation-for="DataDeEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ClienteId" type="hidden" value="@Model.ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></input>
+            </div>
+            <div class="form-group">
+                <input asp-for="VeiculoId" type="hidden" value="@Model.VeiculoId" class="form-control" asp-items="ViewBag.VeiculoId"></input>
+            </div>
+            <div class="form-group">
+                <input asp-for="EmpresaId" type="hidden" value="@Model.EmpresaId" class="form-control" asp-items="ViewBag.EmpresaId"></input>
+            </div>
+
+            <div class="form-group pt-4">
+                <p class="alert alert-success">
+                    Esta reserva tem um custo de  <b>@Model.Preco</b> Euros.
+                </p>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Reservar" class="btn btn-success" />
+                <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Cancelar pedido</a>
+            </div>
+            <div class="form-group">
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

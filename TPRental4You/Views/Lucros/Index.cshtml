@@ -1,0 +1,199 @@
+﻿@model TPRental4You.Models.ViewModels.LucroViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (User.IsInRole("Gestor"))
+{
+    <h1>Faturacoes da Empresa</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Últimos 7 Dias
+                </th>
+                <th>
+                    Últimos 30 Dias
+                </th>
+                <th>
+                    Média de reservas dos últimos 30 Dias
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Lucro7Dias) €
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Lucro30Dias) €
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.MediaReservas30Dias) reservas
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <p></p>
+    <div style="text-align:center">
+        Reservas Últimos 30 Dias
+        <canvas id="chartGraficoReservas"></canvas>
+    </div>
+    @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Lucros/GetDadosReservas",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                let Labels = data[0];
+                let Datasets1 = data[1];
+                let dataT = {
+                    labels: Labels,
+                    datasets: [{
+                        label: "Reservas",
+                        data: Datasets1,
+                        fill: false,
+                        borderWidth: 1,
+                        backgroundColor: ["red", "green", "blue", "cyan", "yellow"]
+                    }]
+                };
+                let ctx = $("#chartGraficoReservas").get(0).getContext("2d");
+                let myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Reservas Últimos 30 Dias ' },
+                        legend: { position: 'bottom' },
+
+                    }
+                });
+            }
+        });
+    </script>
+ }
+}
+else
+{
+    <div style="text-align:center">
+        Reservas Últimos 30 Dias
+        <canvas id="chartGraficoReservasAdmin"></canvas>
+    </div>
+    <p></p>
+    <div style="text-align:center">
+        Reservas Últimos 12 Meses
+        <canvas id="chartGraficoReservas12"></canvas>
+    </div>
+    <p></p>
+    <div style="text-align:center">
+        Clientes Últimos 12 Meses
+        <canvas id="chartGraficoClientes12"></canvas>
+    </div>
+    @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Lucros/GetDadosReservasAdmin",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                let Labels = data[0];
+                let Datasets1 = data[1];
+                let dataT = {
+                    labels: Labels,
+                    datasets: [{
+                        label: "Reservas",
+                        data: Datasets1,
+                        fill: false,
+                        borderWidth: 1,
+                        backgroundColor: ["red", "green", "blue", "cyan", "yellow"]
+                    }]
+                };
+                let ctx = $("#chartGraficoReservasAdmin").get(0).getContext("2d");
+                let myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Reservas Últimos 30 Dias ' },
+                        legend: { position: 'bottom' },
+
+                    }
+                });
+            }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/Lucros/GetDadosReservas12Admin",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                let Labels = data[0];
+                let Datasets1 = data[1];
+                let dataT = {
+                    labels: Labels,
+                    datasets: [{
+                        label: "Reservas",
+                        data: Datasets1,
+                        fill: false,
+                        borderWidth: 1,
+                        backgroundColor: ["red", "green", "blue", "cyan", "yellow"]
+                    }]
+                };
+                let ctx = $("#chartGraficoReservas12").get(0).getContext("2d");
+                let myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Reservas Últimos 30 Dias ' },
+                        legend: { position: 'bottom' },
+
+                    }
+                });
+            }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/Lucros/GetDadosClientes12Admin",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                let Labels = data[0];
+                let Datasets1 = data[1];
+                let dataT = {
+                    labels: Labels,
+                    datasets: [{
+                        label: "Clientes",
+                        data: Datasets1,
+                        fill: false,
+                        borderWidth: 1,
+                        backgroundColor: ["red", "green", "blue", "cyan", "yellow"]
+                    }]
+                };
+                let ctx = $("#chartGraficoClientes12").get(0).getContext("2d");
+                let myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Clientes Últimos 12 Meses ' },
+                        legend: { position: 'bottom' },
+
+                    }
+                });
+            }
+        });
+    </script>
+ }
+}

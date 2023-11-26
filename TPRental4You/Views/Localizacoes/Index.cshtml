@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TPRental4You.Models.Localizacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Localizações</h1>
+
+<p>
+    <a class="btn btn-primary" style="background-color:cadetblue; border-color:cadetblue; border-radius:15px" asp-action="Create">Criar Nova</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoAdicional)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoAdicional)
+                </td>
+                <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    @if (item.Veiculos.Count() == 0)
+                    {
+                        <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Remover</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

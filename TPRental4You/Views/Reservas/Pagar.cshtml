@@ -1,0 +1,87 @@
+﻿@model TPRental4You.Models.Reserva
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Pagar</h1>
+
+<h4>Prossiga com o pagamento da Reserva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <select style="display:none" asp-for="EstadoReserva" class="form-control" asp-items="Html.GetEnumSelectList<estadoReserva>()"></select>
+            <input type="hidden" asp-for="Preco" class="form-control" />
+            <select style="display:none" asp-for="VeiculoId" asp-items="ViewBag.VeiculoId"></select>
+            <select style="display:none" asp-for="ClienteId" asp-items="ViewBag.ClienteId"></select>
+            <select style="display:none" asp-for="EmpresaId" asp-items="ViewBag.EmpresaId"></select>
+            <input type="hidden" asp-for="DataDeEntrega" />
+            <input type="hidden" asp-for="DataDeLevantamento" />
+            <input type="hidden" asp-for="DataDeReserva" />
+            <select style="display:none" asp-for="Situacao" class="form-control">
+                <option selected value="1"></option>
+            </select>
+
+            <div class="form-group">
+                <label asp-for="DataDeLevantamento" class="control-label"></label>
+                <input asp-for="DataDeLevantamento" disabled readonly class="form-control" />
+                <span asp-validation-for="DataDeLevantamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataDeEntrega" class="control-label"></label>
+                <input asp-for="DataDeEntrega" disabled readonly class="form-control" />
+                <span asp-validation-for="DataDeEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VeiculoId" class="control-label"></label>
+                <select asp-for="VeiculoId" class="form-control" disabled readonly asp-items="ViewBag.VeiculoId"></select>
+                <span asp-validation-for="VeiculoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpresaId" class="control-label"></label>
+                <select asp-for="EmpresaId" class="form-control" disabled readonly asp-items="ViewBag.EmpresaId"></select>
+                <span asp-validation-for="EmpresaId" class="text-danger"></span>
+            </div>
+            <div class="form-group pt-4">
+                <p class="alert alert-success">
+                    Entidade  <b>12345</b>
+                </p>
+                <p class="alert alert-success">
+
+                    Referência  <b id="ac"></b>
+                </p>
+                <p class="alert alert-success">
+                    Montante  <b>@Model.Preco</b> Euros.
+                </p>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Pagar" class="btn btn-success" />
+                <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Cancelar pagamento</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        var minm = 111111111;
+        var maxm = 999999999;
+        var down = document.getElementById('ac');
+        down.innerHTML = Math.floor(Math
+            .random() * (maxm - minm + 1)) + minm;
+    }
+
+</script>
+
+<div>
+    <a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,132 @@
+﻿@model TPRental4You.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Veiculo</h4>
+
+@if (ViewBag.EditaVeiculo)
+{
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <input asp-for="Foto" type="hidden" class="form-control" />
+                <input asp-for="Matricula" type="hidden" class="form-control" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Marca" class="control-label"></label>
+                    <select asp-for="Marca" class="form-control" asp-items="Html.GetEnumSelectList<Marcas>()"></select>
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating">
+                    <div>
+
+                        @if (Model.Foto == null)
+                        {
+                            <img id="MyFoto" class="img-thumbnail" src="~/imagens/user.png" style="width: 20%;" />
+                        }
+                        else
+                        {
+                            <img id="MyFoto" class="img-thumbnail" style="height:75px;width:auto"
+                         src="data:image/*;base64,@(Convert.ToBase64String(Model.Foto))" />
+                        }
+
+                    </div>
+                    <div>
+                        <label asp-for="FotoFile">Escolha uma imagem de perfil:</label>
+                        <input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                           asp-for="FotoFile" class="form-control"
+                           onchange="document.getElementById('MyFoto').src = window.URL.createObjectURL(this.files[0])" />
+                        <span asp-validation-for="FotoFile" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Km" class="control-label"></label>
+                    <input asp-for="Km" class="form-control" />
+                    <span asp-validation-for="Km" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Preço por hora
+                    <input asp-for="Preco" class="form-control" />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Lugares" class="control-label"></label>
+                    <input asp-for="Lugares" class="form-control" />
+                    <span asp-validation-for="Lugares" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Malas" class="control-label"></label>
+                    <input asp-for="Malas" class="form-control" />
+                    <span asp-validation-for="Malas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mudancas" class="control-label"></label>
+                    <select asp-for="Mudancas" class="form-control" asp-items="Html.GetEnumSelectList<tipoMudancas>()"></select>
+                    <span asp-validation-for="Mudancas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataInicial" class="control-label"></label>
+                    <input asp-for="DataInicial" class="form-control" />
+                    <span asp-validation-for="DataInicial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataFim" class="control-label"></label>
+                    <input asp-for="DataFim" class="form-control" />
+                    <span asp-validation-for="DataFim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LocalizacaoId" class="control-label"></label>
+                    <select asp-for="LocalizacaoId" class="form-control" asp-items="ViewBag.LocalizacaoId"></select>
+                    <span asp-validation-for="LocalizacaoId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TiposDeVeiculoId" class="control-label"></label>
+                    <select asp-for="TiposDeVeiculoId" class="form-control" asp-items="ViewBag.TiposDeVeiculoId"></select>
+                    <span asp-validation-for="TiposDeVeiculoId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmpresaId" class="control-label"></label>
+                    <select asp-for="EmpresaId" class="form-control" asp-items="ViewBag.EmpresaId"></select>
+                    <span asp-validation-for="EmpresaId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submeter" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <h3 class="text-warning">Não pode editar este veiculo!</h3>
+}
+
+
+<div>
+    <a class="btn btn-outline-dark" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

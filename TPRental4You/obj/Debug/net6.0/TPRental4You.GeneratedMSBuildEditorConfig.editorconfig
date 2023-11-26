@@ -1,0 +1,292 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TPRental4You
+build_property.RootNamespace = TPRental4You
+build_property.ProjectDir = C:\Users\ElMatador\Desktop\Engenharia-Informatica\3º-ANO\1º-SEMESTRE\PWEB\TP\TPRental4You\TPRental4You\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ElMatador\Desktop\Engenharia-Informatica\3º-ANO\1º-SEMESTRE\PWEB\TP\TPRental4You\TPRental4You
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Empresas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Empresas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Empresas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Empresas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Empresas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Estados/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Estados/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Estados/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Estados/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Estados/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Localizacoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpemFjb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Localizacoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpemFjb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Localizacoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpemFjb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Localizacoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpemFjb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Localizacoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpemFjb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Lucros/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVjcm9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Lucros/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVjcm9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Lucros/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVjcm9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Lucros/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVjcm9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Lucros/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVjcm9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Devolucao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGV2b2x1Y2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Devolver.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGV2b2x2ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Reservas/Pagar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcUGFnYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/TiposDeVeiculos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEZVZlaWN1bG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/TiposDeVeiculos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEZVZlaWN1bG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/TiposDeVeiculos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEZVZlaWN1bG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/TiposDeVeiculos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEZVZlaWN1bG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/TiposDeVeiculos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEZVZlaWN1bG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Utilizadores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbGl6YWRvcmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Utilizadores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbGl6YWRvcmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Utilizadores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbGl6YWRvcmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Utilizadores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbGl6YWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Veiculos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Veiculos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Veiculos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Veiculos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Veiculos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Veiculos/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElMatador/Desktop/Engenharia-Informatica/3º-ANO/1º-SEMESTRE/PWEB/TP/TPRental4You/TPRental4You/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kpo3detfnp
