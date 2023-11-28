@@ -1,2 +1,2 @@
 # Rental4You
-Project developed in PWEB
+Project developed in PWEB class.
