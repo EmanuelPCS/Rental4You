@@ -1,5 +1,5 @@
 # Rental4You
-Project developed in PWEB class.
+Project developed in PWEB (Programação Web) class.
 
 # Languages/Frameworks/Tools used: 
   - Asp.net;
