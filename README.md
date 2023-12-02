@@ -6,5 +6,4 @@ Project developed in PWEB (Programação Web) class.
   - C#;
   - HTML;
   - CSS;
-  - Javascript;
   - Microsoft Visual Studio.
